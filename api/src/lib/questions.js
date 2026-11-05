@@ -153,7 +153,7 @@ const questions = [
       'Respuesta correcta',
       'Subiendo los archivos manualmente por FTP'
     ],
-    answer: 9,
+    answer: 2,
     explanation:
         'No da acceso a la suscripción, por eso no requiere permisos de Entra ID. Se guarda como el secreto AZURE_STATIC_WEB_APPS_API_TOKEN.'
   }
