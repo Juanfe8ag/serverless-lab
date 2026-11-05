@@ -215,5 +215,25 @@ $('#cert-form').addEventListener('submit', async (e) => {
   }
 });
 
+// Manejo del reto opcional: /api/hello
+const btnHello = document.getElementById('btn-hello');
+const helloResponse = document.getElementById('hello-response');
+
+if (btnHello && helloResponse) {
+  btnHello.addEventListener('click', async () => {
+    helloResponse.textContent = 'Llamando a /api/hello...';
+    try {
+      const res = await fetch('/api/hello?name=Ana');
+      if (!res.ok) {
+        throw new Error(`Error HTTP: ${res.status}`);
+      }
+      const data = await res.json();
+      helloResponse.textContent = data.message;
+    } catch (err) {
+      helloResponse.textContent = 'Error al consultar la función: ' + err.message;
+    }
+  });
+}
+
 checkApi();
 loadQuiz();
