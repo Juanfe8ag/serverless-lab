@@ -142,6 +142,20 @@ const questions = [
     answer: 1,
     explanation:
       'Static Web Apps crea un entorno de staging por Pull Request (el plan Free permite unos pocos simultáneos). Al cerrar el PR, el job "close" lo elimina.'
+  },
+  {
+    id: 'q11',
+    concept: 'CI/CD sin SPN',
+    text: '¿Cómo despliega GitHub Actions?',
+    options: [
+      'No es posible desplegar sin Service Principal',
+      'Con el token de despliegue de la Static Web App guardado como secreto del repositorio',
+      'Respuesta correcta',
+      'Subiendo los archivos manualmente por FTP'
+    ],
+    answer: 2,
+    explanation:
+        'No da acceso a la suscripción, por eso no requiere permisos de Entra ID. Se guarda como el secreto AZURE_STATIC_WEB_APPS_API_TOKEN.'
   }
 ];
 
